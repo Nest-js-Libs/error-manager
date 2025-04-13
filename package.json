@@ -1,6 +1,6 @@
 {
   "name": "@nest-js/error-manager",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "NestJS error manager library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
