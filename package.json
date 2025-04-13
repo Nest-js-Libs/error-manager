@@ -1,7 +1,7 @@
 {
   "name": "@nest-js/error-manager",
   "version": "0.0.3",
-  "description": "NestJS cache strategies library",
+  "description": "NestJS error manager library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -24,7 +24,6 @@
   },
   "keywords": [
     "nestjs",
-    "cache",
     "error-manager",
     "problem details",
     "typescript"
