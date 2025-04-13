@@ -1,5 +1,5 @@
 {
-  "name": "@nest-js/cache-strategies",
+  "name": "@nest-js/error-manager",
   "version": "0.0.3",
   "description": "NestJS cache strategies library",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nest-js-Libs/nest-js-cache-strategies"
+    "url": "https://github.com/Nest-js-Libs/nest-js-error-manager"
   },
   "scripts": {
     "start:dev": "nest start --watch",
@@ -25,7 +25,8 @@
   "keywords": [
     "nestjs",
     "cache",
-    "strategies",
+    "error-manager",
+    "problem details",
     "typescript"
   ],
   "author": "Yasniel Fajardo",
