@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ErrorManagerModule } from './lib/error-manager.module';
+import { AppModule } from './example/example.module';
 
 export const swaggerConfig = app => {
   const options = new DocumentBuilder()
@@ -14,7 +14,7 @@ export const swaggerConfig = app => {
 
 
 async function bootstrap() {
-  const app = await NestFactory.create(ErrorManagerModule);
+  const app = await NestFactory.create(AppModule);
   swaggerConfig(app);
   await app.listen(3000);
   console.log('Application is running on: http://localhost:3000');
