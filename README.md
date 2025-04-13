@@ -1,5 +1,10 @@
 # Módulo Error Manager
 
+# @nest-js/error-manager
+
+[![npm version](https://img.shields.io/npm/v/@nest-js/error-manager.svg)](https://www.npmjs.com/package/@nest-js/error-manager)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 El módulo Error Manager implementa el estándar [RFC 7807 Problem Details](https://datatracker.ietf.org/doc/html/rfc7807) para el manejo uniforme de errores en APIs HTTP. Este estándar proporciona una forma estructurada y consistente de devolver información de error a los clientes, facilitando el diagnóstico y la resolución de problemas.
 
@@ -11,54 +16,6 @@ El módulo Error Manager implementa el estándar [RFC 7807 Problem Details](http
 - Filtro global para capturar y transformar todas las excepciones
 - Integración con el sistema de logging
 
-## Estructura del módulo
-
-```
-error-manager/
-├── controllers/
-│   └── error-documentation.controller.ts  # Controlador para servir documentación HTML
-├── filters/
-│   └── error-manager.filter.ts            # Filtro global para capturar excepciones
-├── services/
-│   ├── error-html.service.ts              # Servicio para generar páginas HTML
-│   └── trace-id.service.ts                # Servicio para generar IDs de rastreo
-├── types/
-│   └── problem-details.ts                 # Interfaz para el formato Problem Details
-└── error-manager.module.ts                # Definición del módulo
-```
-
-## Componentes
-
-### ErrorManagerFilter
-
-Filtro global que captura todas las excepciones no manejadas y las transforma al formato Problem Details. Este filtro:
-
-- Extrae información relevante de la excepción
-- Genera un ID de rastreo único (traceId)
-- Crea una respuesta estructurada según el estándar RFC 7807
-- Registra el error en el sistema de logs
-- Devuelve la respuesta con el tipo de contenido `application/problem+json`
-
-### TraceIdService
-
-Servicio encargado de generar IDs de rastreo únicos para cada error. Características:
-
-- Genera IDs con formato `{tipo-error}-{uuid}`
-- Normaliza el tipo de error para usarlo como prefijo
-- Proporciona validación de formato para los IDs de rastreo
-
-### ErrorHtmlService
-
-Servicio que genera páginas HTML de documentación para cada tipo de error. Estas páginas incluyen:
-
-- Título y descripción del error
-- Formato de respuesta según RFC 7807
-- Posibles soluciones para resolver el problema
-- Información adicional y recomendaciones
-
-### ErrorDocumentationController
-
-Controlador que sirve las páginas HTML de documentación para cada tipo de error a través del endpoint `/errors/:errorType`.
 
 ## Formato de respuesta
 
